@@ -161,3 +161,32 @@
 .nav-link-secondary:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .left {
+        padding-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-bottom {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    .header-nav-main {
+        gap: 10px;
+    }
+}

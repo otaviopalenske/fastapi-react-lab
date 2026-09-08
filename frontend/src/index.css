@@ -50,6 +50,12 @@
   }
 }
 
+/* Faz o site ficar responsivo */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
 /* #root {
   width: 99%;
   max-width: 100%;

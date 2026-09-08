@@ -1,5 +1,7 @@
 export interface CardProdutoProps {
     photo: string;
     title: string;
-    price: number;
+    price: any;
+    width?: string;
+    height?: string;
 }

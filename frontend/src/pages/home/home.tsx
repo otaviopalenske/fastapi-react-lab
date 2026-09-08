@@ -1,20 +1,24 @@
 import Header from '../../components/header/Header'
+import Footer from '../../components/footer/Footer'
 import './home.css'
-import { headerNavItems, secondaryNavItems } from '../../constants/home_const'
+import { headerNavItems, cardProdutos, footerSections } from '../../constants/home_const'
+import CardListProdutos from '../../components/cards/cardList/cardList_produtos';
 
 export default function Home() {
-
 
     return (
         <div className='mainContainer'>
             <div className="contentHeader">
-                <Header headerItems={headerNavItems}/>
+                <Header headerItems={headerNavItems} />
             </div>
             <main className="contentMeio">
-                <h2 className='titleMeio'>meio</h2>
+                <div className="contentMeioSection">
+                    <p className='titleMeio'>Ofertas Imperdíveis</p>
+                    <CardListProdutos produtos={cardProdutos} />
+                </div>
             </main>
             <div className="contentFooter">
-                <h2 className='titleFooter'>footer</h2>
+                <Footer footerSections={footerSections} />
             </div>
         </div>
     )

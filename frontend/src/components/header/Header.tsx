@@ -1,5 +1,4 @@
-import React from 'react';
-import { Search, Heart, User, ShoppingCart, ChevronDown, Menu } from 'lucide-react';
+import { Search, Heart, User, ShoppingCart, ChevronDown } from 'lucide-react';
 import type { NavItem } from '../../interfaces/int_header';
 import './Header.css';
 
@@ -54,14 +53,6 @@ export default function Header({ headerItems }: { headerItems: NavItem[] }) {
                         </button>
                     ))}
                 </nav>
-
-                {/* <nav className="header-nav-secondary">
-                    {secondaryNavItems.map((item, index) => (
-                        <a key={index} href={item.href} className="nav-link-secondary">
-                            {item.label}
-                        </a>
-                    ))}
-                </nav> */}
             </div>
         </header>
     );
