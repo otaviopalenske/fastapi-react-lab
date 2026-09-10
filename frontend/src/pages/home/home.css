@@ -5,7 +5,7 @@
     min-height: 100vh;
     overflow-y: auto;
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .contentTopo {
@@ -37,7 +37,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 2rem 0;
+    padding: 10px 10px;
     /* border: 2px solid #282cff; */
 }
 
@@ -47,6 +47,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+    max-width: 1300px;
     padding: 20px 20px;
     /* border: 2px solid #28ff4c; */
 }
@@ -66,7 +67,7 @@
     color: #1c2f53;
     width: 100%;
     text-align: left;
-    padding-left: 40px;
+    padding: 0px 20px;
     /* border: 2px solid rgb(5, 46, 94); */
 
 }
@@ -79,4 +80,31 @@
 .titleFooter {
     font-size: 15px;
     color: white;
+}
+
+.loading-text {
+    font-size: 18px;
+    color: #6b7280;
+    padding: 40px 0;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.error-text {
+    font-size: 16px;
+    color: #dc2626;
+    padding: 20px;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+}
+
+.empty-text {
+    font-size: 16px;
+    color: #9ca3af;
+    padding: 40px 0;
 }

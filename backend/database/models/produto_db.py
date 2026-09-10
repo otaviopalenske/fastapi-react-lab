@@ -9,5 +9,6 @@ class Produto_DB(Base):
     nome = Column(VARCHAR(50), index=True)
     preco = Column(DECIMAL(10, 2), index=True)
     sku = Column(VARCHAR(50), index=True)
+    imagem_url = Column(VARCHAR(500), nullable=True)
     
     compras = relationship("Compras_DB", back_populates="produto")

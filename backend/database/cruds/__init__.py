@@ -1,5 +1,5 @@
 from .pessoas_crud import create_pessoas_cruds, get_by_idPessoa
-from .produtos_crud import create_produtos_cruds, get_by_idProduto
+from .produtos_crud import create_produtos_cruds, get_by_idProduto, get_all_produtos
 from .compras_crud import create_compras_cruds
 
 __all__ = [
@@ -10,6 +10,7 @@ __all__ = [
     #Produtos
     "create_produtos_cruds",
     "get_by_idProduto",
+    "get_all_produtos",
 
     #Compras
     "create_compras_cruds"

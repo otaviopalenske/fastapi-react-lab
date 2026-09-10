@@ -10,6 +10,10 @@ def create_produtos_cruds(db: Session, produto_data: dict ):
         "message" : "Produtos inseridos com sucesso!"
     }
 
+def get_all_produtos(db: Session):
+    produtos = db.query(Produto_DB).all()
+    return produtos
+
 def get_by_idProduto(db: Session, id_produto:int):
     produto = db.query(Produto_DB).filter(Produto_DB.id == id_produto).first()
     return produto
