@@ -16,6 +16,7 @@ export default function CardListProdutos({ produtos }: { produtos: CardProdutoPr
             <CardProduto 
             key={index} 
             produto={{
+               id: produto.id,
                photo: produto.photo, 
                title: produto.title, 
                price: formattedPrice, 

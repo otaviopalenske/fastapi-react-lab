@@ -1,8 +1,21 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { CardProdutoProps } from '../../../interfaces/int_cardProduto';
 import './card_produtos.css';
 
 export default function CardProduto({produto}: { produto: CardProdutoProps}) {
+          const navigate = useNavigate();
+
+          const handleComprar = () => {
+            navigate('/checkout', {
+              state: {
+                id_produto: produto.id,
+                nome_produto: produto.title,
+                preco_produto: produto.price,
+                foto_produto: produto.photo,
+              }
+            });
+          };
+
           return (
             <div className="product-card" 
               style={{ 
@@ -17,9 +30,8 @@ export default function CardProduto({produto}: { produto: CardProdutoProps}) {
               <div className="product-info">
                 <h3 className="product-title">{produto.title}</h3>
                 <p className="product-price">{produto.price}</p>
-                <button className="buy-button">Comprar</button>
+                <button className="buy-button" onClick={handleComprar}>Comprar</button>
               </div>
             </div>
           );
         }
-

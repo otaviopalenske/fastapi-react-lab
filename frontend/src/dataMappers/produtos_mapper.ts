@@ -10,6 +10,7 @@ const PLACEHOLDER_IMAGE = "https://images.unsplash.com/photo-1572981779307-38b8c
  */
 export function mapProdutoApiToCard(produtoApi: ProdutoApi): CardProdutoProps {
     return {
+        id: produtoApi.id,
         photo: produtoApi.imagem_url || PLACEHOLDER_IMAGE,
         title: produtoApi.nome,
         price: produtoApi.preco,

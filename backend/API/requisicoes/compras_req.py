@@ -8,10 +8,25 @@ def create_compras_req (db: Session, compras_data: Create_Compras):
         pessoa = get_by_idPessoa(db, compras_data.id_pessoa)
         produto = get_by_idProduto(db, compras_data.id_produto)
 
-        if not pessoa or not produto:
+        if not pessoa:
             return {
                 "status": "404",
-                "message": "Cliente ou Produto não cadastrado"
+                "message": "Usuário não encontrado no sistema"
+            }
+
+        if not produto:
+            return {
+                "status": "404",
+                "message": "Produto não encontrado"
+            }
+
+        # Verifica se os dados informados conferem com o cadastro
+        if (pessoa.nome != compras_data.nome or
+            pessoa.cpf != compras_data.cpf or
+            pessoa.email != compras_data.email):
+            return {
+                "status": "400",
+                "message": "Os dados informados não conferem com o cadastro do usuário"
             }
 
         dados_compras_dict= {
@@ -32,11 +47,11 @@ def create_compras_req (db: Session, compras_data: Create_Compras):
                     },
                     "produto": {
                         "nome" : produto.nome,
-                        "preco" : produto.preco,
+                        "preco" : float(produto.preco),
                         "sku" : produto.sku
                     },
-                    "data_compra" : dados_compras_dict["data_compra"],
-                    "horario_compra" : dados_compras_dict["horario_compra"]
+                    "data_compra" : str(dados_compras_dict["data_compra"]),
+                    "horario_compra" : str(dados_compras_dict["horario_compra"])
                 },
                 "compra" : resultado
             }
@@ -46,4 +61,5 @@ def create_compras_req (db: Session, compras_data: Create_Compras):
             "status": "400",
             "message": str(e)
         }
+
     
