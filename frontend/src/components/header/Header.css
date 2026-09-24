@@ -9,22 +9,16 @@
 /* --- Top Row --- */
 .header-top {
     display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
+    justify-content: flex-end; /* Push right icons to the end */
     align-items: center;
-    padding: 5px 5px;
-    gap: 20px;
-    /* border: 2px solid green; */
+    padding: 10px 20px;
+    position: relative; /* Anchor for absolute centering */
+    height: 60px;
 }
 
 .left {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    padding-left: 557px;
-    /* border: 2px solid blue; */
-    width: 95%;
-
 }
 
 .right {
@@ -36,12 +30,22 @@
 .header-logo-container {
     flex-shrink: 0;
     cursor: pointer;
-    width: 100px;
+    width: auto;
+    transition: transform 0.2s;
+    /* border: 2px solid red; */
+}
+
+.header-logo-container:hover {
+    transform: scale(1.05);
 }
 
 .header-search-container {
-    flex-grow: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
     max-width: 800px;
+    margin: 0 auto;
     /* border: 2px solid black; */
 }
 
@@ -104,14 +108,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 0 30px 10px 30px; */
-    /* border: 2px solid blue; */
+    width: 100%;
+    padding-bottom: 10px;
 }
 
 .header-nav-main {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
 }
 
 .nav-item {

@@ -1,0 +1,39 @@
+.bola-component {
+    width: var(--bola-size, 50px);
+    height: var(--bola-size, 50px);
+    background-color: var(--bola-color, #3498db);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.bola-component[role="button"] {
+    cursor: pointer;
+}
+
+.bola-component[role="button"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.bola-label {
+    text-align: center;
+    font-size: 30px;
+    padding: 0 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
+    line-height: 1.2;
+    transition: font-size 0.5s ease-in-out;
+}
+
+/* Bola compacta — texto diminui proporcionalmente */
+.bola--compact .bola-label {
+    font-size: 18px;
+}

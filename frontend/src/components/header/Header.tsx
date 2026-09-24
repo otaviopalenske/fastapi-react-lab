@@ -1,4 +1,5 @@
-import { Search, Heart, User, ShoppingCart, ChevronDown } from 'lucide-react';
+import { Search, Heart, User, ShoppingCart, Component } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import type { NavItem } from '../../interfaces/int_header';
 import './Header.css';
 
@@ -8,6 +9,7 @@ export default function Header({ headerItems }: { headerItems: NavItem[] }) {
             {/* Linha Superior */}
             <div className="header-top">
                 <div className="left">
+
                     <div className="header-search-container">
                         <div className="header-search-wrapper">
                             <Search className="search-icon" size={20} />
@@ -42,16 +44,12 @@ export default function Header({ headerItems }: { headerItems: NavItem[] }) {
             {/* Linha Inferior */}
             <div className="header-bottom">
                 <nav className="header-nav-main">
-                    <button className="nav-item departments-btn">
-                        <span>Departamentos</span>
-                    </button>
-
-                    {headerItems.slice(1).map((item, index) => (
-                        <button key={index} className="nav-item">
-                            {item.label}
-                            {item.hasDropdown && <ChevronDown size={16} className="chevron-icon" />}
-                        </button>
-                    ))}
+                    <Link to="/" className="nav-item" style={{ textDecoration: 'none' }}>
+                        <span>Página Inicial</span>
+                    </Link>
+                    <Link to="/teste-componentes" className="nav-item" style={{ textDecoration: 'none' }}>
+                        <span>Teste de Componentes</span>
+                    </Link>
                 </nav>
             </div>
         </header>

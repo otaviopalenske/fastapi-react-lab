@@ -1,0 +1,60 @@
+.helice-chart-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    /* Largura total do gráfico */
+    aspect-ratio: 1 / 1;
+    margin: 40px auto;
+
+    /* Variável global para controlar o tamanho da fatia e os cálculos de alinhamento automaticamente */
+    --sector-width: 440px;
+}
+
+/* Ponto central absoluto do gráfico */
+.helice-chart-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.helice-slice-container {
+    position: absolute;
+    /* Travar as dimensões absolutas da fatia para evitar que variações do navegador afetem o centro de rotação */
+    width: var(--sector-width);
+    height: calc(var(--sector-width) * 0.52);
+    /* 260 / 500 = 0.52 */
+
+    /* Metade da largura definida pela variável */
+    left: calc(var(--sector-width) * -0.5);
+    /* Distância calculada a partir da proporção do SVG: Largura * 0.92 */
+    top: calc(var(--sector-width) * -0.92);
+    /* Eixo de rotação milimetricamente no centro geométrico do raio de 450 da fatia */
+    transform-origin: 50% 176.923%;
+    transition: transform 0.5s ease-in-out, opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Estado expandido — fatia selecionada cresce e se afasta do centro */
+.helice-slice--expanded {
+    z-index: 10;
+}
+
+/* Estado collapsed — fatias não selecionadas encolhem */
+.helice-slice--collapsed {
+    opacity: 0.75;
+}
+
+/* Container para a bola central */
+.helice-center-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cursor pointer quando o mouse está sobre uma fatia — feedback visual */
+.helice-chart--sector-hovered {
+    cursor: pointer;
+}

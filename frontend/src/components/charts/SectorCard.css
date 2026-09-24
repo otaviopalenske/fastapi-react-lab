@@ -1,0 +1,245 @@
+.sector-card-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.sector-card--hovered {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.sector-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.sector-bg {
+    fill: #ffffff;
+    transition: fill 0.3s ease;
+}
+
+.sector-band {
+    fill: var(--sector-color, #4a6ca5);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.sector-card--hovered .sector-band {
+    opacity: 1;
+}
+
+.sector-content-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 4px;
+}
+
+.sector-title {
+    color: var(--sector-title-color, #2c3e50);
+    margin: 4px 0 2px 0;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0px;
+    line-height: 1.1;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    max-width: 100%;
+    overflow: visible;
+    transition: font-size 0.4s ease;
+}
+
+.sector-text {
+    margin: 0;
+    font-size: 9px;
+    color: #555;
+    line-height: 1.1;
+    text-align: center;
+    padding: 0 4px;
+}
+
+.sector-number {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--sector-color, #4a6ca5);
+    margin-bottom: 2px;
+}
+
+.sector-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--sector-color, #4a6ca5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-bottom: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sector-card--hovered .sector-icon {
+    transform: scale(1.1);
+}
+
+.sector-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--icon-grad, var(--sector-color, #4a6ca5)) !important;
+}
+
+.sector-icon svg * {
+    stroke: inherit !important;
+}
+
+.sector-main-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--sector-color, #4a6ca5);
+    margin-top: 2px;
+    line-height: 1.1;
+    max-width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    transition: opacity 0.3s ease, max-height 0.4s ease, font-size 0.4s ease;
+    max-height: 48px;
+    opacity: 1;
+}
+
+/* 
+   Estado COLLAPSED — outro card está expandido*/
+
+.sector-card--collapsed .sector-main-value {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sector-card--collapsed .sector-title {
+    font-size: 12px;
+}
+
+.sector-card--collapsed .sector-number {
+    font-size: 10px;
+}
+
+/* Estado EXPANDED — este card foi selecionado */
+
+.sector-card--expanded .sector-bg {
+    fill: #fafbff;
+}
+
+.sector-card--expanded .sector-band {
+    opacity: 1;
+}
+
+.sector-card--expanded .sector-title {
+    font-size: 15px;
+    margin: 2px auto 1px auto;
+    max-width: 115px;
+}
+
+.sector-card--expanded .sector-main-value {
+    font-size: 18px;
+    max-height: 28px;
+}
+
+.sector-card--expanded .sector-number {
+    font-size: 11px;
+}
+
+/* Conteúdo expandido — carrossel de parceiros */
+.sector-expanded-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    max-width: 100%;
+    width: 100%;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease 0.1s, max-height 0.4s ease;
+    pointer-events: none;
+}
+
+.sector-card--expanded .sector-expanded-content {
+    opacity: 1;
+    max-height: 120px;
+    overflow: visible;
+    pointer-events: auto;
+}
+
+.sector-card--expanded .sector-main-value.main-value-pessoas {
+    max-height: 50px;
+    overflow: visible;
+}
+
+/* Custom list for Investidores e Doadores */
+.investors-custom-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+    padding: 0 24px 0 4px; /* Mais padding na direita para afastar o bloco inteiro da borda direita (vai mais pra esquerda) */
+    margin-top: 2px;
+}
+
+.investors-custom-item {
+    display: flex;
+    justify-content: flex-end; /* Mantém os ícones alinhados numa coluna reta na direita do container */
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+.investors-custom-name {
+    font-size: 8.5px;
+    font-weight: 600;
+    color: var(--sector-color, #4a6ca5);
+    text-align: right;
+    line-height: 1;
+    flex: 1; /* Faz o texto preencher o espaço, alinhando todos os ícones */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.investors-custom-icon {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.investors-custom-icon img {
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+}
+
+.investors-placeholder {
+    width: 10px;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 2px;
+}

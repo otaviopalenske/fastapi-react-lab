@@ -1,0 +1,93 @@
+.teste-componentes-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.teste-componentes-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #a54a8e;
+}
+
+.teste-componentes-container p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    /* border: 2px solid #e70000; */
+}
+
+.sextupla-helice-wrapper {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.teste-componentes-subtitle {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Temas de cores - Fatias (SectorCards) */
+.tema-sector-1 {
+    --sector-color: #d85695;
+    --sector-color-end: #8c529c;
+}
+
+.tema-sector-2 {
+    --sector-color: #8c529c;
+    --sector-color-end: #2e529d;
+}
+
+.tema-sector-3 {
+    --sector-color: #2e529d;
+    --sector-color-end: #1aa1ac;
+}
+
+.tema-sector-4 {
+    --sector-color: #1aa1ac;
+    --sector-color-end: #11966d;
+}
+
+.tema-sector-5 {
+    --sector-color: #11966d;
+    --sector-color-end: #4ba145;
+}
+
+.tema-sector-6 {
+    --sector-color: #4ba145;
+    --sector-color-end: #8dc440;
+}
+
+.tema-sector-7 {
+    --sector-color: #8dc440;
+    --sector-color-end: #d5ca1a;
+}
+
+.tema-sector-8 {
+    --sector-color: #d5ca1a;
+    --sector-color-end: #f5931e;
+}
+
+.tema-sector-9 {
+    --sector-color: #f5931e;
+    --sector-color-end: #d85695;
+}
+
+/* Temas de cores - Bolas */
+.tema-bola-center {
+    --bola-color: #ffffff;
+    color: #333;
+    /* Texto escuro na bola central branca */
+    border: 2px solid #ddd;
+}
