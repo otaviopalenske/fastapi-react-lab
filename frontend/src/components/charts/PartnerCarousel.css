@@ -25,8 +25,13 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
     cursor: pointer;
+    /* Transition base para hover + animações de rotação */
+    transition:
+        transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.3s ease,
+        opacity 0.35s ease;
+    opacity: 1;
 }
 
 .partner-carousel-item:hover {
@@ -42,4 +47,32 @@
     object-fit: contain;
     border-radius: 50%;
     display: block;
+}
+
+/* ── Animações de rotação ─────────────────────────────────────── */
+
+/** Slot saindo: fade-out + leve encolhimento */
+.partner-carousel-item.partner-slot--exiting {
+    opacity: 0;
+    transform: scale(0.6);
+    pointer-events: none;
+}
+
+/** Slot entrando: começa invisível e escala de volta ao normal.
+    O estado inicial (opacity:0, scale:0.6) é definido via JS ao
+    setar os dados novos; a transition do .partner-carousel-item
+    cuida de animar de volta para opacity:1 / scale:1.           */
+.partner-carousel-item.partner-slot--entering {
+    animation: partnerFadeIn 0.35s ease forwards;
+}
+
+@keyframes partnerFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

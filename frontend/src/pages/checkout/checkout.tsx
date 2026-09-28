@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { criarCompra } from '../../services/compras_service';
+import type { CheckoutState } from '../../interfaces/int_checkoutState';
 import './checkout.css';
 
-interface CheckoutState {
-    id_produto: number;
-    nome_produto: string;
-    preco_produto: string;
-    foto_produto: string;
-}
 
 export default function Checkout() {
     const location = useLocation();

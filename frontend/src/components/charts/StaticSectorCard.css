@@ -148,27 +148,17 @@
 
 .sector-card--expanded .sector-title {
     font-size: 15px;
-    margin: 2px auto 0px auto;
+    margin: 2px auto 1px auto;
     max-width: 115px;
-    line-height: 1.05;
 }
 
 .sector-card--expanded .sector-main-value {
-    font-size: 14px;
-    max-height: 22px;
-    margin-top: 0;
+    font-size: 18px;
+    max-height: 28px;
 }
 
 .sector-card--expanded .sector-number {
     font-size: 11px;
-}
-
-/* Limita a altura total do wrapper quando expandido para nao encostar na banda de cor */
-.sector-card--expanded .sector-content-wrapper {
-    max-height: 148px;
-    overflow: hidden;
-    justify-content: flex-start;
-    padding-top: 6px;
 }
 
 /* Conteúdo expandido — carrossel de parceiros */
@@ -188,8 +178,8 @@
 
 .sector-card--expanded .sector-expanded-content {
     opacity: 1;
-    max-height: 60px;
-    overflow: hidden;
+    max-height: 120px;
+    overflow: visible;
     pointer-events: auto;
 }
 

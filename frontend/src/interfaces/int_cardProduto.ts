@@ -2,7 +2,7 @@ export interface CardProdutoProps {
     id: number;
     photo: string;
     title: string;
-    price: any;
+    price: string | number;
     width?: string;
     height?: string;
 }

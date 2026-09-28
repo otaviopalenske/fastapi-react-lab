@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, createElement } from 'react';
 import SectorCard from './SectorCard';
 import Bola from './Bola';
-import { heliceSlices } from '../../constants/helice_const';
+import { staticHeliceSlices } from '../../constants/staticHelice_const';
 import './HeliceChart.css';
 
 
@@ -68,7 +68,7 @@ export default function HeliceChart() {
             onClick={handleClick}
         >
             <div className="helice-chart-inner">
-                {heliceSlices.map((slice, index) => {
+                {staticHeliceSlices.map((slice, index) => {
                     const rotation = index * 40;
                     const isExpanded = expandedIndex === index;
                     const isCollapsed = hasExpanded && !isExpanded;
