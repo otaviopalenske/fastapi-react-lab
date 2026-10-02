@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import type { SectorCardProps } from '../../interfaces/int_sectorCardProps';
-import { SECTOR_PATH, BAND_PATH } from '../../constants/sectorCard_const';
+import { SECTOR_PATH, BAND_PATH, TOP_BAND_PATH } from '../../constants/sectorCard_const';
 import PartnerCarousel from './PartnerCarousel';
 import './SectorCard.css';
 
@@ -72,6 +72,13 @@ export default function SectorCard({
                 {/* Faixa Inferior de Cor */}
                 <path
                     d={BAND_PATH}
+                    className="sector-band"
+                    style={{ fill: `url(#${gradId})` }}
+                />
+
+                {/* Faixa Superior de Cor (Detalhe) */}
+                <path
+                    d={TOP_BAND_PATH}
                     className="sector-band"
                     style={{ fill: `url(#${gradId})` }}
                 />

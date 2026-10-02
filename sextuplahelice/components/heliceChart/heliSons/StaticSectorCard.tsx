@@ -1,9 +1,8 @@
 import { useId } from 'react';
 import type { SectorCardProps } from '../../interfaces/int_sectorCardProps';
-import { SECTOR_PATH, BAND_PATH } from '../../constants/sectorCard_const';
+import { SECTOR_PATH, BAND_PATH, TOP_BAND_PATH } from '../../constants/sectorCard_const';
 import PartnerCarousel from './PartnerCarousel';
 import './SectorCard.css';
-
 
 
 export default function SectorCard({
@@ -35,12 +34,9 @@ export default function SectorCard({
     const isEducation = title.toLowerCase().includes('educação e conhecimento');
     const isPessoas = title.toLowerCase().includes('pessoas');
     const isInvestors = title.toLowerCase().includes('investidores e doadores');
-    const isPublicoLocal = title.toLowerCase().includes('setor público local');
 
-    /* Setores que ficam em ângulos onde o espaço horizontal é mais estreito
-       precisam de contentWidth menor para não vazar lateralmente ao expandir */
-    const needsNarrowWidth = isInvestors || isPublicoLocal;
-    const contentWidth = isCollapsed ? 110 : isExpanded ? (needsNarrowWidth ? 145 : 190) : 155;
+    /* Largura do content wrapper ajustada por estado. Reduzimos para investidores para caber na base afunilada */
+    const contentWidth = isCollapsed ? 110 : isExpanded ? (isInvestors ? 145 : 190) : 155;
 
     /* Tamanho de fonte do title ajustado por estado */
     const iconY = 245;
@@ -80,10 +76,17 @@ export default function SectorCard({
                     style={{ fill: `url(#${gradId})` }}
                 />
 
+                {/* Faixa Superior de Cor (Detalhe) */}
+                <path
+                    d={TOP_BAND_PATH}
+                    className="sector-band"
+                    style={{ fill: `url(#${gradId})` }}
+                />
+
                 {/* Grupo com clipPath — TUDO dentro é cortado pela forma da fatia */}
                 <g clipPath={`url(#${clipId})`}>
                     {/* Conteúdo HTML incorporado no centro da fatia */}
-                    <foreignObject x="0" y="42" width="500" height="168">
+                    <foreignObject x="0" y="42" width="500" height="185">
                         <div
                             style={{
                                 width: '100%',
@@ -101,7 +104,7 @@ export default function SectorCard({
                                     transition: 'transform 0.3s ease, width 0.4s ease',
                                     width: `${contentWidth}px`,
                                     maxWidth: '90%',
-                                    marginTop: (isEducation && !isExpanded) ? '-15px' : (isInvestors && isExpanded ? '-10px' : '0'),
+                                    marginTop: isEducation ? '-15px' : (isInvestors && isExpanded ? '-10px' : '0'),
                                 }}
                             >
                                 {number && <div className="sector-number">{number}</div>}

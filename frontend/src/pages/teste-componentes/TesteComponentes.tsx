@@ -1,6 +1,6 @@
 import { headerNavItems } from '../../constants/home_const'
 import Header from '../../components/header/Header'
-import HeliceChart from '../../components/charts/HeliceChart'
+import HeliceChart from '../../components/heliceChart/HeliceChart'
 import './TesteComponentes.css';
 
 export default function TesteComponentes() {

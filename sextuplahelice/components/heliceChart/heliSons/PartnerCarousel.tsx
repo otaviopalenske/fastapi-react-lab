@@ -1,5 +1,5 @@
-import { usePartnerRotation } from '../../hooks/usePartnerRotation';
-import type { PartnerCarouselProps } from '../../interfaces/int_partnerCarouselProps';
+import { usePartnerRotation } from '../../../hooks/usePartnerRotation';
+import type { PartnerCarouselProps } from '../../../interfaces/int_partnerCarouselProps';
 import './PartnerCarousel.css';
 
 

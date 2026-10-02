@@ -26,7 +26,8 @@
 .sector-band {
     fill: var(--sector-color, #4a6ca5);
     opacity: 0.9;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 6px var(--sector-color, #4a6ca5));
 }
 
 .sector-card--hovered .sector-band {

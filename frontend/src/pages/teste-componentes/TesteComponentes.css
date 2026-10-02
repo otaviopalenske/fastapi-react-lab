@@ -39,7 +39,7 @@
 }
 
 /* Temas de cores - Fatias (SectorCards) */
-.tema-sector-1 {
+/* .tema-sector-1 {
     --sector-color: #d85695;
     --sector-color-end: #8c529c;
 }
@@ -82,12 +82,11 @@
 .tema-sector-9 {
     --sector-color: #f5931e;
     --sector-color-end: #d85695;
-}
+} */
 
 /* Temas de cores - Bolas */
-.tema-bola-center {
+/* .tema-bola-center {
     --bola-color: #ffffff;
     color: #333;
-    /* Texto escuro na bola central branca */
     border: 2px solid #ddd;
-}
+} */

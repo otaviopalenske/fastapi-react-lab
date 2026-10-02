@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, createElement } from 'react';
-import SectorCard from './SectorCard';
-import Bola from './Bola';
+import SectorCard from './heliSons/SectorCard';
+import Bola from './heliSons/Bola';
 import { heliceSlices } from '../../constants/helice_const';
 import './HeliceChart.css';
 
